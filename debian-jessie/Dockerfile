@@ -43,8 +43,8 @@ RUN cp /usr/games/minecraft/init/supervisor_conf /etc/supervisor/conf.d/mineos.c
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
 
 #entrypoint allowing for setting of mc password
-COPY entrypoint.sh /entrypoint.sh
-ENTRYPOINT ["/entrypoint.sh"]
+COPY entrypoint.sh /usr/games/minecraft/entrypoint.sh
+ENTRYPOINT ["/usr/games/minecraft/entrypoint.sh"]
 
 EXPOSE 8443 25565-25570
 VOLUME /var/games/minecraft
